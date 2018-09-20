@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 //create a new express app
 var expressApp = express();
 
@@ -87,6 +89,6 @@ expressApp.get('/error', (request, response) => {
 });
 
 //App starts listennin
-expressApp.listen(3000, () => {
-    console.log("Server is up on port 3000");
+expressApp.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
